@@ -31,12 +31,12 @@ public class OrderCardDeliveryTest {
     public void orderCardTest() {
         Configuration.holdBrowserOpen = true;
         open("http://localhost:9999");
-        $("[placeholder=\"Город\"]").setValue("Казань");
+        $("[placeholder=\"Город\"]").setValue("Можайск");
         //$("[placeholder=\"Дата встречи\"]").click();
         $("[placeholder=\"Дата встречи\"]").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[placeholder=\"Дата встречи\"]").setValue(planningDate);
-        $("[name=\"name\"]").setValue("Пушкин Александр");
-        $("[name=\"phone\"]").setValue("+79002223344");
+        $("[name=\"name\"]").setValue("Ильина Анна Николаевна");
+        $("[name=\"phone\"]").setValue("+79998885566");
         $("[data-test-id='agreement']").click();
         $("[class=\"button__text\"]").click();
         $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
